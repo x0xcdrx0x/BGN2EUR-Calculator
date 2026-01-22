@@ -31,20 +31,6 @@ A Firefox extension for quick conversion between Euro (EUR) and Bulgarian Lev (B
 - **Languages:** JavaScript, HTML, CSS
 - **Exchange Rate:** Fixed 1 EUR = 1.95583 BGN
 
-## Project Structure
-BGN2EUR-Calculator/
-├── manifest.json
-├── popup.html
-├── popup.css
-├── popup.js
-├── icons/
-│ ├── icon16.png
-│ ├── icon32.png
-│ ├── icon48.png
-│ ├── icon96.png
-│ └── icon128.png
-└── README.md
-
 ## License
 MIT License - see [LICENSE](LICENSE) file for details.
 
