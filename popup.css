@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 350px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.container {
+    background: white;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+.rate-info {
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 20px;
+    padding: 8px;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.converter-box {
+    margin-bottom: 15px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.converter-box.rotating-up {
+    animation: rotateUp 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.converter-box.rotating-down {
+    animation: rotateDown 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes rotateUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    45% {
+        transform: translateY(-30px) scale(0.9);
+        opacity: 0;
+    }
+    55% {
+        transform: translateY(30px) scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes rotateDown {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    45% {
+        transform: translateY(30px) scale(0.9);
+        opacity: 0;
+    }
+    55% {
+        transform: translateY(-30px) scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #555;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 4px;
+    border: 2px solid #e0e0e0;
+    transition: border-color 0.3s;
+}
+
+.input-group:focus-within {
+    border-color: #667eea;
+}
+
+input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    color: #333;
+}
+
+.currency {
+    padding: 8px 12px;
+    background: #667eea;
+    color: white;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.swap-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 15px 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.swap-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.swap-btn:active {
+    transform: translateY(0);
+}
+
+.swap-btn.rotating {
+    animation: rotate 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+.result {
+    text-align: center;
+    padding: 15px;
+    background: #f0f7ff;
+    border-radius: 8px;
+    margin-top: 15px;
+    position: relative;
+}
+
+.result-text {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.result-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 8px;
+}
+
+.copy-btn {
+    padding: 6px 14px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 6px;
+}
+
+.copy-btn:hover {
+    background: #5568d3;
+    transform: translateY(-1px);
+}
+
+.copy-btn:active {
+    transform: translateY(0);
+}
+
+.copy-btn.copied {
+    background: #4caf50;
+    animation: copySuccess 0.3s ease-out;
+}
+
+.copy-btn.copied::after {
+    content: ' ✓';
+}
+
+@keyframes copySuccess {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.footer-link {
+    text-align: center;
+    margin-top: 15px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+}
+
+.footer-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.footer-link a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
